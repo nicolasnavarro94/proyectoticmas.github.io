@@ -12,24 +12,19 @@ $.ajax({
         $('#profile-photo').attr('src', imgSrc);
 
         
-        var Descripcion = document.querySelector('meta[name="description"]');
-        Descripcion.setAttribute('content', fullName);
+        document.head.querySelector('meta[name="description"]').content = fullName + " Curriculum Vitae"
 
-        var ogTitle = document.querySelector('meta[property="og:title"]');
-        ogTitle.setAttribute('content', fullName);
+        document.head.querySelector('meta[property="og:title"]').content = fullName
 
-        var ogImage = document.querySelector('meta[property="og:image"]');
-        ogImage.setAttribute('content', imgSrc);
+        document.head.querySelector('meta[property="og:description"]').content = fullName + " Curriculum Vitae"
 
+        document.head.querySelector('meta[property="og:image"]').content = imgSrc
 
-        var ogTwitterTitle = document.querySelector('meta[name="twitter:title"]');
-        ogTwitterTitle.setAttribute('content', fullName);
+        document.head.querySelector('meta[name="twitter:title"]').content = fullName
 
-        var ogTwitterDescription = document.querySelector('meta[name="twitter:description"]');
-        ogTwitterDescription.setAttribute('content', fullName);
+        document.head.querySelector('meta[name="twitter:description"]').content = fullName + " Curriculum Vitae"
 
-        var ogTwitterImage = document.querySelector('meta[name="twitter:image"]');
-        ogTwitterImage.setAttribute('content', imgSrc);
+        document.head.querySelector('meta[name="twitter:image"]').content = imgSrc
 
         
         $('header h1').text(fullName);
